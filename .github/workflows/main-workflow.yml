@@ -16,13 +16,13 @@ jobs:
         sudo apt-get install -y gcovr
         
     - name: build_SenderSource
-      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o SenderSource test.cpp GenerateBatteryParameters.c
+      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o SenderSource test.cpp Sender.c
        
     - name: run_SenderSource
       run: ./SenderSource
     
     - name: build_SenderExecutable
-      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o SenderExecutable Sender.c GenerateBatteryParameters.c
+      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o SenderExecutable Sender.c Sender.c
      
     - name: run_SenderExecutable
       run: ./SenderExecutable > Sender.txt
