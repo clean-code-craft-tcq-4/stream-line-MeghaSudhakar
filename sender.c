@@ -1,4 +1,4 @@
-#include "GenerateBatteryParameters.h"
+#include "sender.h"
 
 void GenerateLinearExpValues(float* RandomData, linerExpParameters LinearExpressionParam, int NumOfValues)
 {
