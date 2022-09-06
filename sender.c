@@ -1,6 +1,7 @@
 #pragma once
 #include <math.h>
-
+#include <string.h>
+#include <stdio.h>
 
 void GenerateCurrentTemperaturePairToCsv(char* ToConsole, int NumOfValuesToBeGenerated)
 {
