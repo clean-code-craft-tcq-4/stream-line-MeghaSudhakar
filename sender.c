@@ -1,7 +1,4 @@
-#pragma once
-#include <math.h>
-#include <string.h>
-#include <stdio.h>
+#include "GenerateBatteryParameters.h"
 
 void GenerateLinearExpValues(float* RandomData, linerExpParameters LinearExpressionParam, int NumOfValues)
 {
