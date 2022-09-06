@@ -16,17 +16,17 @@ jobs:
         sudo apt-get install -y gcovr
         
     - name: build_SenderSource
-      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o SenderSource test.cpp Sender.c
+      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o SenderSource test.cpp sender.c
        
     - name: run_SenderSource
       run: ./SenderSource
     
     - name: build_SenderExecutable
-      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o SenderExecutable sender.c sender.c
+      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o SenderExecutable SendBatteryParametersToConsole.c sender.c
      
     - name: run_SenderExecutable
       run: ./SenderExecutable > Sender.txt
- 
+   
     - name: collect coverage
       run: gcovr --gcov-exclude=".*test.*" -r . --html --html-details -o coverage.html --print-summary
 
