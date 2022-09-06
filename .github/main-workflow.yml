@@ -16,29 +16,17 @@ jobs:
         sudo apt-get install -y gcovr
         
     - name: build_SenderSource
-      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o SenderSource test_GenerateBatteryParameters.cpp GenerateBatteryParameters.c
-    
-    - name: build_ReceiverSource
-      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o ReceiverSource test_ReceiveBatteryParameters.cpp ReceiveBatteryParameters.c
-    
+      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o SenderSource test.cpp GenerateBatteryParameters.c
+       
     - name: run_SenderSource
       run: ./SenderSource
-      
-    - name: run_ReceiverSource
-      run: ./SenderSource | ./ReceiverSource
-      
-    - name: build_SenderExecutable
-      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o SenderExecutable SendBatteryParametersToConsole.c GenerateBatteryParameters.c
-      
-    - name: build_ReceiverExecutable
-      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o ReceiverExecutable ReceiveBatteryParametersFromConsole.c ReceiveBatteryParameters.c
     
+    - name: build_SenderExecutable
+      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o SenderExecutable Sender.c GenerateBatteryParameters.c
+     
     - name: run_SenderExecutable
       run: ./SenderExecutable > Sender.txt
-      
-    - name: run_ReceiverExecutable
-      run: ./SenderExecutable | ./ReceiverExecutable
-
+ 
     - name: collect coverage
       run: gcovr --gcov-exclude=".*test.*" -r . --html --html-details -o coverage.html --print-summary
 
