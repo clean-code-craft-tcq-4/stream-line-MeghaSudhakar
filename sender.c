@@ -3,6 +3,13 @@
 #include <string.h>
 #include <stdio.h>
 
+void GenerateBatteryTemperatureValues(float* RandomData, int NumOfValuesToBeGenerated)
+{
+  linerExpParameters LinearExpressionParam = {0.1, 28.0}; // with slope = 0.1 and xIntercept = 28 (deg)
+  
+  GenerateLinearExpValues(RandomData, LinearExpressionParam, NumOfValuesToBeGenerated);
+}
+
 void GenerateCurrentTemperaturePairToCsv(char* ToConsole, int NumOfValuesToBeGenerated)
 {
   //char Tempchar[50] = "Current in A, Temperature in degC\n";
