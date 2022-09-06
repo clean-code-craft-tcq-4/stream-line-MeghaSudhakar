@@ -22,7 +22,7 @@ jobs:
       run: ./SenderSource
     
     - name: build_SenderExecutable
-      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o SenderExecutable Sender.c Sender.c
+      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o SenderExecutable sender.c sender.c
      
     - name: run_SenderExecutable
       run: ./SenderExecutable > Sender.txt
