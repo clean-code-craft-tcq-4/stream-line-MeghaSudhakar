@@ -12,4 +12,4 @@ typedef struct{
   float xIntercept;
 }linerExpParameters;
 
-void GenerateCurrentTemperaturePairToCsv(char* ToConsole, int NumOfValuesToBeGenerated);
+void GenerateCurrentTempPairToCsv(char* ToConsole, int NumOfValuesToBeGenerated);
