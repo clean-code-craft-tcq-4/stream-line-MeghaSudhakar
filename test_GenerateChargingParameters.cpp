@@ -40,7 +40,7 @@ TEST_CASE("To check if battery temperature is generated")
   REQUIRE(memcmp(RandomData, ExpectedData, sizeof(RandomData)) == 0);
 }
 
-TEST_CASE("To check if battery temperature is generated")
+TEST_CASE("To check if battery temperature is generated, another set of values")
 {
   float RandomData[10];
   float ExpectedData[10] = {58.0, 58.1, 58.2, 58.3, 58.4, 58.5, 58.6, 58.7, 58.8, 58.9}; // with slope = 0.1 and xIntercept = 28 (deg)
