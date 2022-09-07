@@ -13,3 +13,7 @@ typedef struct{
 }linerExpParameters;
 
 void GenerateCurrentTempPairToCsv(char* ToConsole, int NumOfValuesToBeGenerated);
+
+void GenerateLinearExpValues(float* RandomData, linerExpParameters LinearExpressionParam, int NumOfValues);
+void GenerateChargingCurrentValues(float* RandomData, int NumOfValuesToBeGenerated);
+void GenerateBatteryTempValues(float* RandomData, int NumOfValuesToBeGenerated);
