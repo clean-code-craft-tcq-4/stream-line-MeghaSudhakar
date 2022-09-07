@@ -35,7 +35,7 @@ TEST_CASE("To check if battery temperature is generated")
   float ExpectedData[10] = {28.0, 28.1, 28.2, 28.3, 28.4, 28.5, 28.6, 28.7, 28.8, 28.9}; // with slope = 0.1 and xIntercept = 28 (deg)
   int NumOfValuesToBeGenerated = SIZE_OF_ARRAY(RandomData);
   
-  GenerateBatteryTemperatureValues(RandomData, NumOfValuesToBeGenerated);
+  GenerateBatteryTempValues(RandomData, NumOfValuesToBeGenerated);
   
   REQUIRE(memcmp(RandomData, ExpectedData, sizeof(RandomData)) == 0);
 }
