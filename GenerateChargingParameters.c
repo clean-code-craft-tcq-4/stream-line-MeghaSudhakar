@@ -48,4 +48,4 @@ void GenerateCurrentTempPairToCsv(char* ToConsole, int NumOfValuesToBeGenerated)
     //printf(ToConsole, " Temperature: %.2f, Charge Rate: %.2f\n", TemperatureArray[Loop], CurrentArray[Loop]);
     strcat(ToConsole, Tempchar);
   }
-;
+}
