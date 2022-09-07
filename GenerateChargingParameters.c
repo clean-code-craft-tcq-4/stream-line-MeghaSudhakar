@@ -22,14 +22,14 @@ void GenerateChargingCurrentValues(float* RandomData, int NumOfValuesToBeGenerat
   GenerateLinearExpValues(RandomData, LinearExpressionParam, NumOfValuesToBeGenerated);
 }
 
-void GenerateBatteryTemperatureValues(float* RandomData, int NumOfValuesToBeGenerated)
+void GenerateBatteryTempValues(float* RandomData, int NumOfValuesToBeGenerated)
 {
   linerExpParameters LinearExpressionParam = {0.1, 28.0}; // with slope = 0.1 and xIntercept = 28 (deg)
   
   GenerateLinearExpValues(RandomData, LinearExpressionParam, NumOfValuesToBeGenerated);
 }
 
-void GenerateCurrentTemperaturePairToCsv(char* ToConsole, int NumOfValuesToBeGenerated)
+void GenerateCurrentTempPairToCsv(char* ToConsole, int NumOfValuesToBeGenerated)
 {
   //char Tempchar[50] = "Current in A, Temperature in degC\n";
   char Tempchar[50] = {0};
@@ -38,7 +38,7 @@ void GenerateCurrentTemperaturePairToCsv(char* ToConsole, int NumOfValuesToBeGen
   float TemperatureArray[NumOfValuesToBeGenerated];
   
   GenerateChargingCurrentValues(CurrentArray, NumOfValuesToBeGenerated);
-  GenerateBatteryTemperatureValues(TemperatureArray, NumOfValuesToBeGenerated);
+  GenerateBatteryTempValues(TemperatureArray, NumOfValuesToBeGenerated);
   
   //strcat(ToConsole, Tempchar); // copy the header first
   for(Loop = 0; Loop < NumOfValuesToBeGenerated;Loop++)
