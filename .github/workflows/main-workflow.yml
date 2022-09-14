@@ -28,7 +28,7 @@ jobs:
       run: ./SenderExecutable # > Sender.txt
    
     - name: collect coverage
-      run: gcovr --gcov-exclude=".*test.*","catch.hpp" -r . --html --html-details -o coverage.html --print-summary
+      run: gcovr --gcov-exclude=".*((test)|(catch)).*" -r . --html --html-details -o coverage.html --print-summary
 
     # - name: 'Upload Sender.txt'
     #   uses: actions/upload-artifact@v2
