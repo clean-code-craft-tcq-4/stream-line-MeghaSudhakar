@@ -7,11 +7,11 @@
 
 TEST_CASE("maximum value - first value in the readings, expect that same value is returned")
 {
-    float maxValue = 0.0;
-    float newValue = 9.8;
+    double maxValue = 0.0f;
+    double newValue = 9.8f;
     int instanceNum = 1;
-    float expectedValue = 9.8;
+    double expectedValue = 9.8f;
 
     getMaxValue(&maxValue, newValue, instanceNum);
-    REQUIRE(maxValue = expectedValue);
+    REQUIRE(maxValue == expectedValue);
 }

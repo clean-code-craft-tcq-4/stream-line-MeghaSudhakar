@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "receiver.h"
 
-void getMaxValue(float *maxValue, float newValue, int instanceNum)
+void getMaxValue(double *maxValue, double newValue, int instanceNum)
 {
     if (instanceNum == 1)
     {
