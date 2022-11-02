@@ -3,7 +3,7 @@
 
 #include "catch.hpp"
 #include <stdio.h>
-#include "receiver.h"
+#include "./receiver/receiver.h"
 
 TEST_CASE("maximum value - first value in the readings, expect that same value is returned")
 {

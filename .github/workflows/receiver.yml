@@ -17,7 +17,7 @@ jobs:
 
     - name: build_ReceiverSource
       # run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o ReceiverSource test_receiver.cpp receiver.c
-      run: g++ -Wall -Wextra -o ReceiverSource test_receiver.cpp receiver.c
+      run: g++ -Wall -Wextra -o ReceiverSource test_receiver.cpp ./receiver/receiver.c
 
     - name: run_ReceiverSource
       run: ./ReceiverSource
