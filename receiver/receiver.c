@@ -3,7 +3,7 @@
 
 void getMaxValue(double *maxValue, double newValue, int instanceNum)
 {
-    if (instanceNum == 1)
+    if (instanceNum == 0)
     {
         *maxValue = newValue;
     }
@@ -18,7 +18,7 @@ void getMaxValue(double *maxValue, double newValue, int instanceNum)
 
 void getMinValue(double * minValue, double newValue, int instanceNum)
 {
-    if (instanceNum == 1)
+    if (instanceNum == 0)
     {
         *minValue = newValue;
     }

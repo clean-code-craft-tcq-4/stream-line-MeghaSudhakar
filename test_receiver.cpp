@@ -9,7 +9,7 @@ TEST_CASE("maximum value - first value in the readings, expect that same value i
 {
     double maxValue = 0.0;
     double newValue = 9.8;
-    int instanceNum = 1;
+    int instanceNum = 0;
     double expectedValue = 9.8;
 
     getMaxValue(&maxValue, newValue, instanceNum);
@@ -20,7 +20,7 @@ TEST_CASE("maximum value - second value in the readings, expect that max value b
 {
     double maxValue = 9.8;
     double newValue = 9.7;
-    int instanceNum = 2;
+    int instanceNum = 1;
     double expectedValue = 9.8;
 
     getMaxValue(&maxValue, newValue, instanceNum);
@@ -31,7 +31,7 @@ TEST_CASE("maximum value - third value in the readings, expect that max value  b
 {
     double maxValue = 9.8;
     double newValue = 9.9;
-    int instanceNum = 3;
+    int instanceNum = 2;
     double expectedValue = 9.9;
 
     getMaxValue(&maxValue, newValue, instanceNum);
@@ -42,7 +42,7 @@ TEST_CASE("minimum value - first value in the readings, expect that same value i
 {
     double minValue = 0.0;
     double newValue = 9.9;
-    int instanceNum = 1;
+    int instanceNum = 0;
     double expectedValue = 9.9;
 
     getMinValue(&minValue, newValue, instanceNum);
@@ -53,7 +53,7 @@ TEST_CASE("minimum value - second value in the readings, expect that min value b
 {
     double minValue = 9.9;
     double newValue = 9.8;
-    int instanceNum = 2;
+    int instanceNum = 1;
     double expectedValue = 9.8;
 
     getMinValue(&minValue, newValue, instanceNum);
@@ -64,7 +64,7 @@ TEST_CASE("minimum value - third value in the readings, expect that min value  b
 {
     double minValue = 9.8;
     double newValue = 9.7;
-    int instanceNum = 3;
+    int instanceNum = 2;
     double expectedValue = 9.7;
 
     getMinValue(&minValue, newValue, instanceNum);
@@ -75,7 +75,7 @@ TEST_CASE("simple moving average - with one value, verify that same value is ret
 {
     double value[5];
     double newValue = 9.9;
-    int instanceNum = 1;
+    int instanceNum = 0;
     double expectedValue = 9.9;
 
     REQUIRE(getAverageValue(value, newValue, instanceNum) == expectedValue);
