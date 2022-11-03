@@ -50,5 +50,5 @@ double getAverageValue(double * value, double newValue, int instanceNum)
     {
         sum += value[index];
     }
-    return (sum/((double)instanceNum));
+    return (sum/((double)numValuesToProcess));
 }
