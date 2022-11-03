@@ -41,9 +41,9 @@ TEST_CASE("maximum value - third value in the readings, expect that max value  b
 TEST_CASE("minimum value - first value in the readings, expect that same value is returned")
 {
     double minValue = 0.0;
-    double newValue = 9.8;
+    double newValue = 9.9;
     int instanceNum = 1;
-    double expectedValue = 9.8;
+    double expectedValue = 9.9;
 
     getMinValue(&minValue, newValue, instanceNum);
     REQUIRE(minValue == expectedValue);
@@ -51,8 +51,8 @@ TEST_CASE("minimum value - first value in the readings, expect that same value i
 
 TEST_CASE("minimum value - second value in the readings, expect that min value between last min and new value is returned")
 {
-    double minValue = 9.8;
-    double newValue = 9.7;
+    double minValue = 9.9;
+    double newValue = 9.8;
     int instanceNum = 2;
     double expectedValue = 9.8;
 
@@ -63,9 +63,9 @@ TEST_CASE("minimum value - second value in the readings, expect that min value b
 TEST_CASE("minimum value - third value in the readings, expect that min value  between last min and new value is returned")
 {
     double minValue = 9.8;
-    double newValue = 9.9;
+    double newValue = 9.7;
     int instanceNum = 3;
-    double expectedValue = 9.9;
+    double expectedValue = 9.7;
 
     getMinValue(&minValue, newValue, instanceNum);
     REQUIRE(minValue == expectedValue);
