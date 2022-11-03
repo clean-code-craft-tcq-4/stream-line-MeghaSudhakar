@@ -7,8 +7,11 @@ void getMaxValue(double *maxValue, double newValue, int instanceNum)
     {
         *maxValue = newValue;
     }
-    if (*maxValue < newValue)
+    else
     {
-        *maxValue = newValue;
+        if (*maxValue < newValue)
+        {
+            *maxValue = newValue;
+        }
     }
 }

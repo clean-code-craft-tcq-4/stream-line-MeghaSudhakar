@@ -16,7 +16,7 @@ TEST_CASE("maximum value - first value in the readings, expect that same value i
     REQUIRE(maxValue == expectedValue);
 }
 
-TEST_CASE("maximum value - second value in the readings, expect that max value is returned")
+TEST_CASE("maximum value - second value in the readings, expect that max value between last max and new value is returned")
 {
     double maxValue = 9.8;
     double newValue = 9.7;
@@ -27,7 +27,7 @@ TEST_CASE("maximum value - second value in the readings, expect that max value i
     REQUIRE(maxValue == expectedValue);
 }
 
-TEST_CASE("maximum value - third value in the readings, expect that max value is returned")
+TEST_CASE("maximum value - third value in the readings, expect that max value  between last max and new value is returned")
 {
     double maxValue = 9.8;
     double newValue = 9.9;
