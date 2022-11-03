@@ -73,10 +73,80 @@ TEST_CASE("minimum value - third value in the readings, expect that min value  b
 
 TEST_CASE("simple moving average - with one value, verify that same value is returned")
 {
-    double value[5];
+    double value[SIMPLE_MOVING_AVERAGE_BOUNDARY];
     double newValue = 9.9;
     int instanceNum = 0;
     double expectedValue = 9.9;
+
+    REQUIRE(getAverageValue(value, newValue, instanceNum) == expectedValue);
+}
+
+TEST_CASE("simple moving average - with two streamed values, verify that average of two values is returned")
+{
+    double value[SIMPLE_MOVING_AVERAGE_BOUNDARY];
+    double newValue = 9.8;
+    int instanceNum = 1;
+    double expectedValue = 9.85;
+
+    value[0] = 9.9;
+
+    REQUIRE(getAverageValue(value, newValue, instanceNum) == expectedValue);
+}
+
+TEST_CASE("simple moving average - with three streamed values, verify that average of three values is returned")
+{
+    double value[SIMPLE_MOVING_AVERAGE_BOUNDARY];
+    double newValue = 9.7;
+    int instanceNum = 2;
+    double expectedValue = 9.8;
+
+    value[0] = 9.9;
+    value[1] = 9.8;
+
+    REQUIRE(getAverageValue(value, newValue, instanceNum) == expectedValue);
+}
+
+TEST_CASE("simple moving average - with four streamed values, verify that average of four values is returned")
+{
+    double value[SIMPLE_MOVING_AVERAGE_BOUNDARY];
+    double newValue = 9.6;
+    int instanceNum = 3;
+    double expectedValue = 9.75;
+
+    value[0] = 9.9;
+    value[1] = 9.8;
+    value[2] = 9.7;
+
+    REQUIRE(getAverageValue(value, newValue, instanceNum) == expectedValue);
+}
+
+TEST_CASE("simple moving average - with five streamed values, verify that average of five values is returned")
+{
+    double value[SIMPLE_MOVING_AVERAGE_BOUNDARY];
+    double newValue = 9.5;
+    int instanceNum = 4;
+    double expectedValue = 9.7;
+
+    value[0] = 9.9;
+    value[1] = 9.8;
+    value[2] = 9.7;
+    value[3] = 9.6;
+
+    REQUIRE(getAverageValue(value, newValue, instanceNum) == expectedValue);
+}
+
+TEST_CASE("simple moving average - with more than five streamed values, verify that average of last five values is returned")
+{
+    double value[SIMPLE_MOVING_AVERAGE_BOUNDARY];
+    double newValue = 9.4;
+    int instanceNum = 5;
+    double expectedValue = 9.6;
+
+    value[0] = 9.9;
+    value[1] = 9.8;
+    value[2] = 9.7;
+    value[3] = 9.6;
+    value[4] = 9.5;
 
     REQUIRE(getAverageValue(value, newValue, instanceNum) == expectedValue);
 }
