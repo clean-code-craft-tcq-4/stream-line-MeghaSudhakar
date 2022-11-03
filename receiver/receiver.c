@@ -30,3 +30,25 @@ void getMinValue(double * minValue, double newValue, int instanceNum)
         }
     }
 }
+
+double getAverageValue(double * value, double newValue, int instanceNum)
+{
+    double sum = 0.0;
+    int numValuesToProcess;
+
+    if (instanceNum < SIMPLE_MOVING_AVERAGE_BOUNDARY)
+    {
+        value[instanceNum] = newValue;
+        numValuesToProcess = instanceNum;
+    }
+    else
+    {
+        value[instanceNum % SIMPLE_MOVING_AVERAGE_BOUNDARY] = newValue;
+        numValuesToProcess = SIMPLE_MOVING_AVERAGE_BOUNDARY;
+    }
+    for (int index = 0; index < numValuesToProcess; ++index)
+    {
+        sum += value[index];
+    }
+    return (sum/((double)instanceNum));
+}

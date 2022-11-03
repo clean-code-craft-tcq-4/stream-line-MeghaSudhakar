@@ -70,3 +70,13 @@ TEST_CASE("minimum value - third value in the readings, expect that min value  b
     getMinValue(&minValue, newValue, instanceNum);
     REQUIRE(minValue == expectedValue);
 }
+
+TEST_CASE("simple moving average - with one value, verify that same value is returned")
+{
+    double value[5];
+    double newValue = 9.9;
+    int instanceNum = 1;
+    double expectedValue = 9.9;
+
+    REQUIRE(getAverageValue(value, newValue, instanceNum) == expectedValue);
+}
