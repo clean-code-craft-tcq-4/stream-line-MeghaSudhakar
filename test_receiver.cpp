@@ -60,7 +60,7 @@ TEST_CASE("minimum value - second value in the readings, expect that min value b
     REQUIRE(minValue == expectedValue);
 }
 
-TEST_CASE("minimum value - third value in the readings, expect that min value  between last min and new value is returned")
+TEST_CASE("minimum value - third value in the readings, expect that min value between last min and new value is returned")
 {
     double minValue = 9.8;
     double newValue = 9.7;
@@ -71,7 +71,7 @@ TEST_CASE("minimum value - third value in the readings, expect that min value  b
     REQUIRE(minValue == expectedValue);
 }
 
-TEST_CASE("simple moving average - with one value, verify that same value is returned")
+TEST_CASE("simple moving average - with one streamed value, verify that same value is returned")
 {
     double value[SIMPLE_MOVING_AVERAGE_BOUNDARY];
     double newValue = 9.9;
