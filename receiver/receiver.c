@@ -39,7 +39,7 @@ double getAverageValue(double * value, double newValue, int instanceNum)
     if (instanceNum < SIMPLE_MOVING_AVERAGE_BOUNDARY)
     {
         value[instanceNum] = newValue;
-        numValuesToProcess = instanceNum;
+        numValuesToProcess = instanceNum + 1;
     }
     else
     {
