@@ -15,3 +15,18 @@ void getMaxValue(double *maxValue, double newValue, int instanceNum)
         }
     }
 }
+
+void getMinValue(double * minValue, double newValue, int instanceNum)
+{
+    if (instanceNum == 1)
+    {
+        *minValue = newValue;
+    }
+    else
+    {
+        if (*minValue > newValue)
+        {
+            *minValue = newValue;
+        }
+    }
+}
