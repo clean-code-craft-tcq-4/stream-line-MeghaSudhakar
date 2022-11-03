@@ -84,9 +84,9 @@ TEST_CASE("simple moving average - with one streamed value, verify that same val
 TEST_CASE("simple moving average - with two streamed values, verify that average of two values is returned")
 {
     double value[SIMPLE_MOVING_AVERAGE_BOUNDARY];
-    double newValue = 9.8;
+    double newValue = 9.2;
     int instanceNum = 1;
-    double expectedValue = 9.85;
+    double expectedValue = 9.55;
 
     value[0] = 9.9;
 
