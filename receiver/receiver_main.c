@@ -6,15 +6,15 @@
 #define NUM_SENSORS     2
 #define NUM_VALUES      5
 
+static double newReading[NUM_SENSORS];
+static double sMaxValue[NUM_SENSORS];
+static double sMinValue[NUM_SENSORS];
+static double sAvgValue[NUM_SENSORS];
+static double sLastStreamedValues[NUM_SENSORS][NUM_VALUES];
+static char sInfo[NUM_SENSORS][60];
+
 int main(void)
 {
-    double newReading[NUM_SENSORS];
-    double sMaxValue[NUM_SENSORS];
-    double sMinValue[NUM_SENSORS];
-    double sAvgValue[NUM_SENSORS];
-    double sLastStreamedValues[NUM_SENSORS][NUM_VALUES];
-    char sInfo[NUM_SENSORS][60];
-
     for (int readingInstance = 0; readingInstance < NUM_READINGS; ++readingInstance)
     {
         scanf("%lf, %lf\n", &newReading[0], &newReading[1]);
