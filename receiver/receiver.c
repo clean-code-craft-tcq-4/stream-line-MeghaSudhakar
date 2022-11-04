@@ -3,6 +3,7 @@
 
 void getMaxValue(double *maxValue, double newValue, int instanceNum)
 {
+    /* ignore checking for maximum for the first streamed value */
     if (instanceNum == 0)
     {
         *maxValue = newValue;
@@ -18,6 +19,7 @@ void getMaxValue(double *maxValue, double newValue, int instanceNum)
 
 void getMinValue(double * minValue, double newValue, int instanceNum)
 {
+    /* ignore checking for minimum for the first streamed value */
     if (instanceNum == 0)
     {
         *minValue = newValue;
@@ -36,6 +38,8 @@ double getAverageValue(double * value, double newValue, int instanceNum)
     double sum = 0.0;
     int numValuesToProcess;
 
+    /* get the average till four streamed values based on number of values streamed,
+    then onwards, average of the last five can be calculated */
     if (instanceNum < SIMPLE_MOVING_AVERAGE_BOUNDARY)
     {
         value[instanceNum] = newValue;
