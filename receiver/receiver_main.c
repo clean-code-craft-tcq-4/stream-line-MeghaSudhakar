@@ -17,14 +17,14 @@ int main(void)
 
     for (int readingInstance = 0; readingInstance < NUM_READINGS; ++readingInstance)
     {
-        scanf("%0.2lf, %0.2lf\n", &newReading[0], &newReading[1]);
+        scanf("%lf, %lf\n", &newReading[0], &newReading[1]);
 
         for (int sensor = 0; sensor < NUM_SENSORS; ++sensor)
         {
             getMaxValue(&sMaxValue[sensor], newReading[sensor], readingInstance);
             getMinValue(&sMinValue[sensor], newReading[sensor], readingInstance);
             sAvgValue[sensor] = getAverageValue(&sLastStreamedValues[sensor][0], newReading[sensor], readingInstance);
-            sprintf(&sInfo[sensor][0], "Sensor%d: Max-%0.2lf, Min-%0.2lf, Avg-%0.2lf; ", sensor, sMaxValue[sensor], sMinValue[sensor], sAvgValue[sensor]);
+            sprintf(&sInfo[sensor][0], "Sensor%d: Max-%lf, Min-%lf, Avg-%lf; ", sensor, sMaxValue[sensor], sMinValue[sensor], sAvgValue[sensor]);
         }
         printf("%s\n", strcat(&sInfo[0][0], &sInfo[1][0]));
     }
