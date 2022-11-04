@@ -1,0 +1,32 @@
+name: Receiver - Build and Run
+
+on: [push, pull_request]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: install coverage tool
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y gcovr
+
+    - name: build_ReceiverSource
+      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o ReceiverSource test_receiver.cpp ./receiver/receiver.c
+
+    - name: run_ReceiverSource
+      run: ./ReceiverSource
+
+    - name: collect coverage
+      run: gcovr --gcov-exclude=".*((test_receiver)|(catch)).*" -r . --html --html-details -o coverage.html --print-summary
+
+    - name: 'Upload Artifact'
+      uses: actions/upload-artifact@v2
+      with:
+        name: coverage
+        path: ./*.html
+        retention-days: 5

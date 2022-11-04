@@ -1,0 +1,20 @@
+name: SenderReceiver - Build and Run
+
+on: [push, pull_request]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: build_ReceiverExecutable
+      run: g++ -Wall -Wextra -o ReceiverExecutable ./receiver/*.c
+     
+    - name: build_SenderExecutable
+      run: g++ -Wall -Wextra -o SenderExecutable SendChargingParametersToConsole.c GenerateChargingParameters.c
+     
+    - name: run_SenderReceiverExecutable
+      run: ./SenderExecutable | ./ReceiverExecutable
