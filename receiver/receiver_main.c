@@ -17,7 +17,7 @@ int main(void)
 
     for (int readingInstance = 0; readingInstance < NUM_READINGS; ++readingInstance)
     {
-        scanf("%0.2f, %0.2f\n", &newReading[0], &newReading[1]);
+        scanf("%f, %f\n", &newReading[0], &newReading[1]);
 
         for (int sensor = 0; sensor < NUM_SENSORS; ++sensor)
         {
