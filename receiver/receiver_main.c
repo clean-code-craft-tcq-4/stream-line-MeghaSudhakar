@@ -23,9 +23,9 @@ int main(void)
         {
             getMaxValue(&sMaxValue[sensor], newReading[sensor], readingInstance);
             getMinValue(&sMinValue[sensor], newReading[sensor], readingInstance);
-            sAvgValue[sensor] = getAverageValue(&sLastStreamedValues[sensor], newReading[sensor], readingInstance);
+            sAvgValue[sensor] = getAverageValue(&sLastStreamedValues[sensor][0], newReading[sensor], readingInstance);
             sprintf(&sInfo[sensor][0], "Sensor%d:Max-%f,Min-%f,Avg-%f;", sensor, sMaxValue[sensor], sMinValue[sensor], sAvgValue[sensor]);
         }
-        printf("%s\n", strcat(sInfo[0][0], sInfo[1][0]));
+        printf("%s\n", strcat(&sInfo[0][0], &sInfo[1][0]));
     }
 }
