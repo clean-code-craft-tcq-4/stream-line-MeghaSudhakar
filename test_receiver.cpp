@@ -63,9 +63,9 @@ TEST_CASE("minimum value - second value in the readings, expect that min value b
 TEST_CASE("minimum value - third value in the readings, expect that min value between last min and new value is returned")
 {
     double minValue = 9.8;
-    double newValue = 9.7;
+    double newValue = 9.85;
     int instanceNum = 2;
-    double expectedValue = 9.7;
+    double expectedValue = 9.8;
 
     getMinValue(&minValue, newValue, instanceNum);
     REQUIRE(minValue == expectedValue);
